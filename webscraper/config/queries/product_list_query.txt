@@ -1,0 +1,11 @@
+query searchModel($keyword: String, $navParam: String, $storefilter: StoreFilter = ALL, $storeId: String, $itemIds: [String], $channel: Channel = DESKTOP, $additionalSearchParams: AdditionalParams, $loyaltyMembershipInput: LoyaltyMembershipInput, $startIndex: Int, $pageSize: Int, $orderBy: ProductSort, $filter: ProductFilter) {
+    searchModel(keyword: $keyword, navParam: $navParam, storefilter: $storefilter, storeId: $storeId, itemIds: $itemIds, channel: $channel, additionalSearchParams: $additionalSearchParams, loyaltyMembershipInput: $loyaltyMembershipInput) {
+        products(startIndex: $startIndex, pageSize: $pageSize, orderBy: $orderBy, filter: $filter) {
+            itemId
+        }
+        searchReport {
+            totalProducts
+            startIndex
+        }
+    }
+}

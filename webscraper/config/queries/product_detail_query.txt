@@ -1,0 +1,78 @@
+query productClientOnlyProduct($itemId: String!, $dataSource: String, $loyaltyMembershipInput: LoyaltyMembershipInput, $storeId: String, $skipSpecificationGroup: Boolean = false) {
+    product(itemId: $itemId, dataSource: $dataSource, loyaltyMembershipInput: $loyaltyMembershipInput) {
+        itemId
+        identifiers {
+            brandName
+            modelNumber
+            productLabel
+            storeSkuNumber
+            upcGtin13
+            upc
+            isSuperSku
+            parentId
+        }
+        availabilityType {
+            discontinued
+            status
+            type
+            buyable
+        }
+        details {
+            description
+            collection {
+                url
+                collectionId
+            }
+            highlights
+            descriptiveAttributes {
+                value
+            }
+        }
+        media {
+            images {
+                url
+                type
+                subType
+                sizes
+            }
+            video {
+                shortDescription
+                thumbnail
+                url
+                videoStill
+                link {
+                    text
+                    url
+                }
+                title
+                type
+                videoId
+                longDescription
+            }
+            threeSixty {
+                id
+                url
+            }
+            augmentedRealityLink {
+                usdz
+                image
+            }
+        }
+        pricing(storeId: $storeId) {
+            value
+        }
+        reviews {
+            ratingsReviews {
+                averageRating
+                totalReviews
+            }
+        }
+        specificationGroup @skip(if: $skipSpecificationGroup) {
+            specifications {
+                specName
+                specValue
+            }
+            specTitle
+        }
+    }
+}

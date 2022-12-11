@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "paths": {
+    "/users": {
+      "name": "/users",
+      "lambdaFunction": "hhhsfrontendc4ccc546",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "read",
+          "update"
+        ],
+        "groups": {
+          "Dentists": [
+            "read",
+            "update"
+          ],
+          "Students": [
+            "read",
+            "update"
+          ]
+        }
+      }
+    }
+  }
+}

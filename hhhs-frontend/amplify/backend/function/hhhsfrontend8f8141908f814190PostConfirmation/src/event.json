@@ -1,0 +1,7 @@
+{
+  "request": {
+    "userPoolId": "testID",
+    "username": "testUser"
+  },
+  "response": {}
+}
